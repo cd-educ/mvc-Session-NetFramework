@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.title = "Inicio";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Please log in to continue</p>
+
+        @if (ViewBag.msg != null)
+        {
+            <p><b>@ViewBag.msg</b></p>
+        }
+
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            <input type="text" name="usuario" placeholder="Usuario" />
+            <input type="password" name="password" placeholder="Password" />
+            <input type="submit" value="Iniciar sesión" />
+        }
+
+        <p>Or register an account if you are new</p>
+
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+        {
+            <input type="text" name="usuario" placeholder="Usuario" />
+            <input type="password" name="password" placeholder="Password" />
+            <input type="submit" value="Registrarse" />
+        }
+
+    </div>
